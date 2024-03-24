@@ -11,7 +11,7 @@ async function session () {
       method: "POST",
       headers: {
           "content-type": "application/json",
-          "authorization": `Basic ${process.env.AUTHORIZATION_SIGNATURE}==`
+          "authorization": `Basic NXFqbWN0aTlhdDdVVGdESzZscXBxZ2c2Ump5Qkk5OTI6cVQ4alRZbWwzUUNjRVEyT2RhT3RxNXJKMHAxVXdvZmpIcXF6Q3d3TkJRR3AySUxjSmtIM25WTlNFOXVxSGN6aw==`
       },
       body: JSON.stringify({
           "character": "workspaces/default-dszrtuet_4tvehuoopv_1q/characters/galadriel",
@@ -41,7 +41,7 @@ export default function GAIA () {
         method: "POST",
         headers: {
             "content-type": "application/json",
-            "authorization": `Basic ${process.env.AUTHORIZATION_SIGNATURE}==`,
+            "authorization": `Basic NXFqbWN0aTlhdDdVVGdESzZscXBxZ2c2Ump5Qkk5OTI6cVQ4alRZbWwzUUNjRVEyT2RhT3RxNXJKMHAxVXdvZmpIcXF6Q3d3TkJRR3AySUxjSmtIM25WTlNFOXVxSGN6aw==`,
             "Grpc-Metadata-session-id": `${data.name}`
         },
         body: JSON.stringify({
