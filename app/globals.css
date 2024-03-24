@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    /* bg-green-200; */
+/* @layer base {
+  /* html {
+    background-color: black;
+  } */
+  /* :root {
+    --background: black-50;
+    /* html {
+      background-color: black;
+    } */
     
-  }
+  /* }
   .dark {
-
+    --background: white-50;
   }
-}
+} */
 
 /* :root {
   
@@ -24,8 +30,57 @@
 
 body {
   
+} */
+
+@layer base {
+  html {
+    @apply bg-black-50 text-white-50;
+    user-select: none;
+    overflow-x: hidden;
+  }
+  body {    
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, p {
+    margin-left: 5%;
+  }
+  h1 {
+    font-family: inter, arial, Helvetica, verdana, sans-serif;
+  }
+  p {
+    @apply leading-8;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-black-50/10;    
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-green-100/10 rounded-lg border-2 border-green-50;
+  }  
 }
 
 @layer utilities {
-  
-} */
+  .stroke-text {
+    font-weight: bold;
+    -webkit-text-stroke: 1px #F6F6F620;
+    font-size: 30vw;
+    -webkit-text-fill-color: transparent;
+  }
+  .h1 {
+    margin-left: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    font-size: 40px;
+  }
+  .h2 {
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    @apply text-green-50;
+    @apply text-lg;
+  }
+}
