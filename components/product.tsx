@@ -14,7 +14,7 @@ export default function Prod ({ link, image, product, price, value }: { link: st
                         <p className="line-clamp-2">{product}</p>
                         <p className="font-bold">{price}</p>
                     </a>            
-                    <Rating className="p-2" ratedIcon={<FaStar className="text-green-100 w-4 h-4"/>} unratedIcon={<FaStar className="text-white-50/50 w-4 h-4"/>} placeholder="" value={value} readonly/>
+                    <Rating className="px-4 py-2" ratedIcon={<FaStar className="text-green-100 w-4 h-4"/>} unratedIcon={<FaStar className="text-white-50/50 w-4 h-4"/>} placeholder="" value={value} readonly/>
                 </div>
             </motion.div>
         </>

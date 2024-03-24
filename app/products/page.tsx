@@ -38,7 +38,7 @@ export default async function Products () {
   return (
       <>
         <Acc/>
-        <div className="mt-8 relative grid grid-flow-row auto-rows-max gap-32 lg:gap-12 lg:grid-cols-4 items-end justify-center overflow-hidden p-8">
+        <div className="mt-8 relative grid grid-flow-row auto-rows-max gap-32 md:gap-12 md:grid-cols-2 lg:grid-cols-4 items-end justify-center overflow-hidden p-8">
               {data.data.searchModel.products ? (
                   data.data.searchModel.products.map((i: { identifiers: { productLabel: string, canonicalUrl: string }, pricing: { value: number }, media: { images: [ { url: string } ] }, reviews: { ratingsReviews: { averageRating: number }} }) => {
                     return (

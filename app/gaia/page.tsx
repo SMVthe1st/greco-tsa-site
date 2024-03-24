@@ -75,7 +75,7 @@ export default function GAIA () {
           </Tooltip>
         </span>. What can I help you with today?
       </h2>
-      <div className={isTyping ? "flex flex-row justify-center w-full gap-8 py-10" : "py-10 pr-12 flex justify-center w-full"}>
+      <div className={isTyping ? "flex flex-row justify-center w-full gap-8 py-10" : "py-10 pr-0 md:pr-12 flex justify-center items-center w-full"}>
         {isTyping ? (
           <>
             <div className="animate-ping h-3 w-3 rounded-full bg-green-50"></div>

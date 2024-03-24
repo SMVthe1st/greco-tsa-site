@@ -16,13 +16,12 @@ export default function Home () {
           <h1 className="relative text-5xl lg:text-8xl tracking-widest font-extrabold p-4" style={{ letterSpacing : 25 }}>GRECO</h1>
           <h2 className="h2 p-4">Green Renewable Energy Consolidation Operation</h2>
           <p className="p-4 pb-4">The latest and greatest clean energy initiative, here to help homeowners like you find the most efficient and cost-effective solutions keeping our planet, and your pocket, healthy.</p>
-          <Link href="/about" className="text-center mt-6 h1 !text-lg relative bg-green-200 rounded-lg p-4 w-60">
+          <Link href="/about" className="text-center mt-6 h1 !ml-8 md:!ml-14 !text-lg relative bg-green-200 rounded-lg p-4 w-60">
             EXPLORE
             <FaArrowRight className="inline-flex text-white ml-10" />
           </Link>
         </div>        
         <Image className="h-full object-cover object-left absolute top-0 right-0 w-2/4 -z-50" src="/circlez.svg" width="546" height="832" alt=""/>
-        {/* <div className="hidden 2xl:block absolute bottom-14 left-14 bg-transparent border-green-50 border-l-2 border-b-2 h-16 w-2/4 p-0"></div> */}
         <svg className="hidden lg:block fill-green-100 absolute bottom-0 right-0 -z-50" width="500" viewBox="0 0 539 759" xmlns="http://www.w3.org/2000/svg">
           <path d="M268.767 717.143C186.343 711.659 72.9569 721.905 1 760H547V660C478.532 692.035 335.927 717.143 268.767 717.143Z"/>
           <path d="M375.5 202L391.521 733H359.479L375.5 202Z"/>
@@ -37,7 +36,7 @@ export default function Home () {
           <path d="M263.614 492.243L219.481 437.317L318.539 536.375L263.614 492.243Z"/>
         </svg>
       </div>   
-      <hr className="md:hidden relative -mt-10 m-14 border-green-50"></hr>   
+      <hr className="md:hidden relative mt-4 m-14 border-green-50"></hr>   
       <h2 className="h2 p-4 text-center mb-14 md:-mt-24">Created with the help of several trustworthy sources</h2>
       <div className="relative grid grid-flow-row auto-rows-max md:grid-cols-4 lg:grid-cols-9 place-content-center justify-center overflow-hidden pt-2 p-8 gap-8 text-center">
         {SOURCE_LINKS.map((a) => (
@@ -47,10 +46,10 @@ export default function Home () {
         ))}
       </div>
       <hr className="relative m-14 border-green-50"></hr> 
-      <div className="mt-8 relative gap-20 ml-16 lg:ml-0 lg:flex w-full items-center justify-center">
+      <div className="mt-8 relative mx-0 gap-20 md:flex flex-wrap w-full items-center justify-center">
         {CARD_CONTENT.map((b) => (
           <Link key="1" href={b.link}>
-            <Card placeholder="" className="mt-6 w-96">
+            <Card placeholder="" className="mt-6 w-full md:w-96">
               <CardBody className="inline-flex flex-col gap-8 text-center items-center justify-center" placeholder="" >
                 <div dangerouslySetInnerHTML={{ __html: b.svg}}></div>
                 <h2 className="tracking-widest text-center font-bold text-lg text-green-50">{b.title}</h2>
@@ -64,7 +63,7 @@ export default function Home () {
       <hr className="relative m-14 border-green-50"></hr> 
       <div className="">
         <h1 className="mt-10 pl-8 h1">Mission</h1>  
-        <div className="relative float-right w-96 h-full m-8 mt-0">
+        <div className="relative md:float-right w-96 h-full m-8 mt-0">
           <div className="h-96 w-48 bg-green-50 absolute right-40 top-8 -z-10"></div>
           <Image className="h-96 w-48 object-cover m-14" src="/images/home.png" alt="windmill" height={1080} width={1920}/>
           <div className="h-96 w-48 bg-green-150/30 m-14 absolute right-20 top-0"></div>
