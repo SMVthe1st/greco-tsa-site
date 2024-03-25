@@ -5,10 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Timeline, TimelineItem, TimelineConnector, TimelineHeader, TimelineIcon, TimelineBody } from "@material-tailwind/react";
 import { TbBrandNextjs, TbBrandTailwind, TbBrandOpenai, TbApi } from "react-icons/tb";
+import { motion } from "framer-motion"
 
 export default function About () {
     return (
-      <main> 
+      <motion.main className="w-screen w-full"  initial={{x: -20, opacity: 0}} animate={{ x: 0, opacity: 1, transition: { delay: 0.4 } }}>          
           <div>
             <Image priority={true} className="h-screen object-cover w-2/4 border-green-100 border-l-8 border-b-8 opacity-50" src="/heros/about.png" height={1080} width={1920} alt=""/>
             <div className="h-screen object-cover w-2/4 bg-green-200 absolute left-0 top-28 -z-10"></div>
@@ -97,7 +98,7 @@ export default function About () {
               </div>
             </div>
           </div>
-      </main>
+      </motion.main>
     );
   }
   

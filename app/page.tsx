@@ -5,11 +5,11 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { SOURCE_LINKS, CARD_CONTENT } from "@/scripts/constants";
 import { Card, CardBody } from "@material-tailwind/react";
-
+import { motion } from "framer-motion"
 
 export default function Home () {
   return (
-    <main className="w-screen w-full">
+    <motion.main className="w-screen w-full" initial={{x: -20, opacity: 0}} animate={{ x: 0, opacity: 1, transition: { delay: 0.4 } }}>
       <div className="h-screen w-full">
         <h1 className="stroke-text opacity-30 lg:opacity-100 tracking-widest absolute top-28 -left-20 md:-left-36">GRECO</h1>
         <div className="md:px-4 py-0 lg:w-2/4 flex flex-col text-left mt-10 mx-6 lg:ml-0">
@@ -80,6 +80,6 @@ export default function Home () {
           GRECO’s mission is to make renewable energy more accessible to typical homeowners by education them about opportunities. Only through education can there be change.
         </p>
       </div>
-    </main>
+    </motion.main>
   );
 }
