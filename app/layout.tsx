@@ -19,7 +19,7 @@ export default function RootLayout({
           <body className={lato.className}>
             <Nav />
             <main className="min-w-screen min-h-screen overflow-x-hidden">{children}</main>
-            < Footer />
+            <Footer/>
           </body>    
       </html>
   );

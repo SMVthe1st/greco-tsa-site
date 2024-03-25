@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Card, CardHeader, CardBody } from "@material-tailwind/react";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function NewsCard ({ url, image, title, published, description } : { url: string, image: string, title: string, published: string, description: string }) {
     return (
