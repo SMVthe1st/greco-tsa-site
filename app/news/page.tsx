@@ -1,5 +1,5 @@
 import "dotenv/config";
-import NewsCard from "@/components/card";
+import NewsCard from "@/components/news/card";
 
 async function news () {
     const req = await fetch(`https://newsapi.org/v2/everything?q='green energy'&apiKey=${process.env.NEWS_API_KEY}`);
