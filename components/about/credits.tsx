@@ -78,7 +78,7 @@ export default function Credits () {
                     <br/>
                     <br/>
                     <span className="italic">
-                    Created by Shriya Vasudevan from Panther Creek HS, NC 
+                    Created by S. M. V. from Panther Creek HS, NC 
                     <br/>
                     TSA 2024
                     </span>
