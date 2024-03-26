@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
       <html lang="en" className="antialiased">    
           <body className={lato.className}>
-            <Nav />
+            <Nav/>
             <main className="min-w-screen min-h-screen overflow-x-hidden">{children}</main>
             <Footer/>
           </body>    
