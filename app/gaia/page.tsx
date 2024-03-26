@@ -1,26 +1,10 @@
 "use client"
 
-import "dotenv/config";
 import { useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-
-async function session () {
-  const req = await fetch("https://api.inworld.ai/v1/workspaces/default-dszrtuet_4tvehuoopv_1q/characters/gaia:openSession", {
-      method: "POST",
-      headers: {
-          "content-type": "application/json",
-          "authorization": `Basic NXFqbWN0aTlhdDdVVGdESzZscXBxZ2c2Ump5Qkk5OTI6cVQ4alRZbWwzUUNjRVEyT2RhT3RxNXJKMHAxVXdvZmpIcXF6Q3d3TkJRR3AySUxjSmtIM25WTlNFOXVxSGN6aw==`
-      },
-      body: JSON.stringify({
-          "character": "workspaces/default-dszrtuet_4tvehuoopv_1q/characters/galadriel",
-          "user": {"givenName": "user"}
-      })
-  });
-  const resp = await req.json();
-  return resp;
-};
+import Test from "../gaia/api/route";
 
 export default function GAIA () {
   const [message, setMessage] = useState("");
@@ -36,27 +20,11 @@ export default function GAIA () {
     setChats(chats);
     setMessage("");
 
-    const data = await session();
-    const req = await fetch(`https://api.inworld.ai/v1/workspaces/default-dszrtuet_4tvehuoopv_1q/sessions/${data.name}/sessionCharacters/${data.sessionCharacters[0].character}:sendText`, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-            "authorization": `Basic NXFqbWN0aTlhdDdVVGdESzZscXBxZ2c2Ump5Qkk5OTI6cVQ4alRZbWwzUUNjRVEyT2RhT3RxNXJKMHAxVXdvZmpIcXF6Q3d3TkJRR3AySUxjSmtIM25WTlNFOXVxSGN6aw==`,
-            "Grpc-Metadata-session-id": `${data.name}`
-        },
-        body: JSON.stringify({
-            "text": message
-        })
-    });
-
-    const resp = await req.json();
-    const output = resp.textList;
-
-    chats.push(output);
+    chats.push(await Test(message));
     setChats(chats);
     setIsTyping(false);
 
-    return output;
+    return await Test(message);
   };
 
   return (
@@ -90,22 +58,12 @@ export default function GAIA () {
       </div>
       <div className="flex flex-cols justify-center pt-10 px-4 h-48">
         <form className="relative flex text-center min-w-80 md:min-w-96 w-2/4" action="" onSubmit={(e) => chat(e, message)}>
-          <input
-            className="focus:outline-black-50/50 w-full h-16 placeholder-green-50 rounded-lg p-8 bg-black-50/20 border-green-50 border-2 text-green-50"
-            value={message}
-            placeholder="Send a message"
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <button 
-            disabled={!message}
-            className="!absolute right-0 top-0 p-6 rounded-lg bg-transparent" 
-            onClick={(e) => chat(e, message)}
-          >
-            < FaArrowRight className={message ? "text-green-50 text-lg" : "text-green-50/40 text-lg"}/>
+          <input className="focus:outline-black-50/50 w-full h-16 placeholder-green-50 rounded-lg p-8 bg-black-50/20 border-green-50 border-2 text-green-50" value={message} placeholder="Send a message" onChange={(e) => setMessage(e.target.value)}/>
+          <button disabled={!message} className="!absolute right-0 top-0 p-6 rounded-lg bg-transparent" onClick={(e) => chat(e, message)}>
+            <FaArrowRight className={message ? "text-green-50 text-lg" : "text-green-50/40 text-lg"}/>
           </button>
         </form>
       </div>
     </main>
   );
 }
-
