@@ -1,5 +1,5 @@
-import Acc from "@/components/accordion";
-import Prod from "@/components/product";
+import Acc from "@/components/products/accordion";
+import Prod from "@/components/products/product";
 
 async function product () {
   const req = await fetch("https://www.homedepot.com/federation-gateway/graphql?opname=searchModel", {
@@ -29,7 +29,7 @@ export default async function Products () {
               {data.data.searchModel.products ? (
                   data.data.searchModel.products.map((i: { identifiers: { productLabel: string, canonicalUrl: string }, pricing: { value: number }, media: { images: [ { url: string } ] }, reviews: { ratingsReviews: { averageRating: number }} }) => {
                     return (
-                      <Prod key={i.identifiers.productLabel} link={`https://homedepot.com${i.identifiers.canonicalUrl}`} image={i.media.images[0].url.replaceAll(/<SIZE>/g, "400")} product={i.identifiers.productLabel} price={"$" + i?.pricing?.value} value={Math.round(i.reviews.ratingsReviews.averageRating)} />
+                      <Prod key={i.identifiers.productLabel} link={`https://homedepot.com${i.identifiers.canonicalUrl}`} image={i.media.images[0].url.replaceAll(/<SIZE>/g, "400")} product={i.identifiers.productLabel} price={"$" + i?.pricing?.value.toFixed(2)} value={Math.round(i.reviews.ratingsReviews.averageRating)} />
                     );
                   })) : (
                   <p>Loading...</p>
