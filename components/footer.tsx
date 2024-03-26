@@ -1,6 +1,9 @@
+"use client"
+
 import { NAV_LINKS } from "@/scripts/constants";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Footer () {
     return(
@@ -12,11 +15,11 @@ export default function Footer () {
                 <div>                  
                     <ul className="flex flex-wrap items-center justify-center gap-y-2 gap-x-8">
                         {NAV_LINKS.map((a) => (
-                            <li key={a.label}>
+                            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} key={a.label}>
                                 <Link key={a.label} href={a.href}>
                                     {a.label}
                                 </Link>
-                            </li>
+                            </motion.li>
                         ))}                        
                     </ul>
                 </div>

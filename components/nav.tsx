@@ -18,7 +18,7 @@ export default function Nav () {
     const navList = (
         NAV_LINKS.map((a) => (
             <Link scroll={false} key={a.label} href={a.href} className={ CheckPath(a.href) ? "underline underline-offset-8 decoration-green-50 font-semibold block" : "block"}>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                     {a.label}  
                 </motion.div>          
             </Link>
@@ -26,7 +26,7 @@ export default function Nav () {
     );
 
     return (
-        <nav className={CheckPath("/") ? "relative min-w-screen" : "min-w-screen relative bg-black-50 h-28 shadow-[0_0_8px_16px_rgba(0,0,0,0.3)]"}>
+        <nav className={CheckPath("/") ? "relative min-w-screen" : "min-w-screen relative bg-black-50 lg:h-28 shadow-[0_0_8px_16px_rgba(0,0,0,0.3)]"}>
             <div className="ml-14 pl-0 p-8 py-10 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
                 <Link className="flex items-center space-x-3" href="/" key="1">
                     <Image src="/logo.svg" width="127" height="43" alt=""/>
