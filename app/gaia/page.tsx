@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import Talk from "../gaia/api/route";
+import Talk from "@/scripts/gaia";
 
 export default function GAIA () {
   const [message, setMessage] = useState("");
