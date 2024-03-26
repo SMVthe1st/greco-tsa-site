@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import Test from "../gaia/api/route";
+import Talk from "../gaia/api/route";
 
 export default function GAIA () {
   const [message, setMessage] = useState("");
@@ -20,11 +20,11 @@ export default function GAIA () {
     setChats(chats);
     setMessage("");
 
-    chats.push(await Test(message));
+    chats.push(await Talk(message));
     setChats(chats);
     setIsTyping(false);
 
-    return await Test(message);
+    return await Talk(message);
   };
 
   return (
