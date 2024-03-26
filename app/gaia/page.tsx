@@ -5,6 +5,7 @@ import { Tooltip } from "@material-tailwind/react";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Talk from "@/scripts/gaia";
+import { motion } from "framer-motion";
 
 export default function GAIA () {
   const [message, setMessage] = useState("");
@@ -28,9 +29,9 @@ export default function GAIA () {
   };
 
   return (
-    <main className="bg-gradient-to-tr from-green-200/30 to-green-100/80 min-w-screen min-h-screen shadow-inner">
+    <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.2 } }} className="bg-gradient-to-tr from-green-200/40 to-green-100/60 min-w-screen min-h-screen shadow-inner">
       <div className="flex justify-center p-10">
-        <Image src="/gaia.svg" width="160" height="171" alt=""/>
+        <Image className="" src="/gaia.svg" width="160" height="171" alt=""/>
       </div>
       <div className="hidden lg:flex absolute top-36 flex-row p-12 w-screen ml-0 gap-64 h-screen">
         <div className="items-center bg-transparent border-green-50 border-l-2 border-t-2 h-5/6 w-2/4 p-0"></div>
@@ -53,17 +54,17 @@ export default function GAIA () {
         ) : <p className="text-center w-10/12">{chats[chats.length - 1]}</p>}
       </div>
       <div className="relative flex flex-col gap-8 items-center px-4 pb-10 w-screen">      
-        <button className="bg-white-50/20 p-4 rounded-full w-80 md:w-96 text-base text-white-50" onClick={(e) => chat(e, "Cheap green energy options for homeowners")}>Cheap green energy options for homeowners</button>
-        <button className="bg-white-50/20 p-4 rounded-full w-80 md:w-96 text-base text-white-50" onClick={(e) => chat(e, "Tell me a random joke!")}>Tell me a random joke!</button>
+        <motion.button whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.9 }} className="bg-white-50/20 p-4 rounded-full w-80 md:w-96 text-base text-white-50" onClick={(e) => chat(e, "Cheap green energy options for homeowners")}>Cheap green energy options for homeowners</motion.button>
+        <motion.button whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.9 }} className="bg-white-50/20 p-4 rounded-full w-80 md:w-96 text-base text-white-50" onClick={(e) => chat(e, "Tell me a random joke!")}>Tell me a random joke!</motion.button>
       </div>
       <div className="flex flex-cols justify-center pt-10 px-4 h-48">
         <form className="relative flex text-center min-w-80 md:min-w-96 w-2/4" action="" onSubmit={(e) => chat(e, message)}>
-          <input className="focus:outline-black-50/50 w-full h-16 placeholder-green-50 rounded-lg p-8 bg-black-50/20 border-green-50 border-2 text-green-50" value={message} placeholder="Send a message" onChange={(e) => setMessage(e.target.value)}/>
-          <button disabled={!message} className="!absolute right-0 top-0 p-6 rounded-lg bg-transparent" onClick={(e) => chat(e, message)}>
-            <FaArrowRight className={message ? "text-green-50 text-lg" : "text-green-50/40 text-lg"}/>
-          </button>
+          <motion.input whileHover={{ scale: 1.03 }} whileTap={{ scale: 1 }} className="focus:outline-black-50/50 w-full h-16 placeholder-green-50 rounded-lg p-8 bg-black-50/20 border-green-50 border-2 text-green-50" value={message} placeholder="Send a message" onChange={(e) => setMessage(e.target.value)}/>
+          <motion.button whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.9 }} disabled={!message} className="!absolute right-0 top-0 p-6 rounded-lg bg-transparent" onClick={(e) => chat(e, message)}>
+            <FaArrowRight className={message ? "text-green-50 text-lg transition ease delay-50" : "text-green-50/40 text-lg transition ease delay-50"}/>
+          </motion.button>
         </form>
       </div>
-    </main>
+    </motion.main>
   );
 }
