@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Title from "@/components/title";
+import Down from "@/components/down-arrow";
 
 export default function AboutHero () {
     return (
@@ -11,6 +12,7 @@ export default function AboutHero () {
             <div className="h-screen object-cover w-2/4 bg-green-200 absolute left-0 top-28 -z-10"></div>
             <Image className="h-full object-cover object-left absolute top-28 right-0 w-2/4 h-screen -z-50" src="/circlez.svg" width="546" height="832" alt=""/>
             <Title title="ABOUT"/>
+            <Down/>
         </motion.div> 
     );
 };

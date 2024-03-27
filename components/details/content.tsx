@@ -3,6 +3,7 @@
 import Title from "@/components/title";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Down from "@/components/down-arrow";
 
 export default function DetailsContent () {
     return (
@@ -11,6 +12,7 @@ export default function DetailsContent () {
                 <Image priority={true} className="h-screen object-cover opacity-50" src="/heros/details.jpg" height={1080} width={1920} alt=""/>
                 <div className="h-screen object-cover w-screen bg-green-200 absolute left-0 top-28 -z-10"></div>
                 <Title title="DETAILS"></Title>
+                <Down/>
             </motion.div>  
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
                 <h2 className="h2 pt-10 mx-14">There are many types of green solutions.</h2>
