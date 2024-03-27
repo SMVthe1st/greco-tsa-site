@@ -23,7 +23,7 @@ export default function Footer () {
                         ))}                        
                     </ul>
                 </div>
-                <p className="w-full lg:w-fit text-center">© 2024 S. M. V., PCHS TSA. All rights reserved.</p>
+                <p className="w-full text-xs md:text-base lg:w-fit text-center">© 2024 S. M. V., PCHS TSA. All rights reserved.</p>
             </div>
         </footer>
     );

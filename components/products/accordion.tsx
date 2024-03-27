@@ -13,7 +13,7 @@ export default function Acc () {
     
     return (
         <Accordion className="bg-green-200 p-8" placeholder="" open={open === 1} icon={ <FaAngleDown className={`${open ? "rotate-180" : ""} h-7 w-7 transition-transform`}/>}>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.9 }}>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 1.01 }}>
                 <AccordionHeader className="text-base text-white-50 border-none hover:text-white-50 font-bold" placeholder="" onClick={() => handleOpen(1)}>
                     <p>For green energy improvements installed beginning Jan 1st, 2023, you may qualify for a tax credit worth up to $3,200!</p> 
                 </AccordionHeader>
